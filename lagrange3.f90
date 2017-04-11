@@ -1,6 +1,12 @@
+!la no nosso programa vamos criar um file e novo tipo de arquivo
+!Works pares -> criar espa√ß√µ de trabalho e dar um nome
+!vamos em new e criamos um projeto : usar o win 32 console application
+
+! Programa Principal
+
 program lagrange
-    implicit none
-    !INTERFACE PARA FUN«’ES E SUBROTINAS
+    implicit none     !mata a convers√£o
+    !INTERFACE PARA FUN√á√ïES E SUBROTINAS
     interface
         real function f(x)
             implicit none
@@ -13,23 +19,23 @@ program lagrange
             integer n,i,j
         end function
     end interface
-    !VARI¡VEIS UTILIZADAS
-    integer, parameter :: n = 12 !Pontos que ser„o interpolados
+    !VARI√ÅVEIS UTILIZADAS
+    integer, parameter :: n = 12 !Pontos que ser√£o interpolados
     integer, parameter :: ni = 3 !Para os arcos
-    integer, parameter :: nn = 61 !Para o gr·fico
+    integer, parameter :: nn = 61 !Para o gr√°fico
     real x0, xn, passo, passo2
     real, allocatable :: x(:), y(:), xp(:), yp(:)
     integer i,j, aux, aux2
 
-    ! ALOCANDO MEM”RIA DOS VETORES
+    ! ALOCANDO MEM√ìRIA DOS VETORES
     allocate(x(ni)); allocate(y(ni)); allocate(xp(nn-1)); allocate(yp(nn-1));
 
-    !COME«A O PROGRAMA
+    !COME√áA O PROGRAMA
     x0 = -1.0 !PONTO INICIAL
     xn = 1.0 !PONTO FINAL
     passo = (xn - x0)/float(n-1)
 
-    !CRIANDO O PRIMEIRO VETOR DE INTERPOLA«√O
+    !CRIANDO O PRIMEIRO VETOR DE INTERPOLA√á√ÉO
     do i=1,ni
         x(i) = x0 + passo*float(i-1)
         y(i) = f(x(i))
