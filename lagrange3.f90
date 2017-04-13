@@ -5,7 +5,8 @@
 ! Programa Principal
 
 program lagrange
-    implicit none     !mata a conversão
+    implicit none     ! faz com que todas as variáveis do programa tenham que ter o seu tipo obrigatoriamente pré- definidas. 
+
     !INTERFACE PARA FUNÇÕES E SUBROTINAS
     interface
         real function f(x)
@@ -15,14 +16,15 @@ program lagrange
 
         real function val_pol_lagrange(x,y,xi,n)
             implicit none
-            real x(:), y(:), xi, L, Pn
-            integer n,i,j
+            real x(:), y(:), xi, L, Pn         ! O comando REAL é usado para declarar variáveis reais
+            integer n,i,j                      ! O comando INTEGER é usado para declarar variáveis inteiras
         end function
-    end interface
+    end interface]
+    
     !VARIÁVEIS UTILIZADAS
-    integer, parameter :: n = 12 !Pontos que serão interpolados
-    integer, parameter :: ni = 3 !Para os arcos
-    integer, parameter :: nn = 61 !Para o gráfico
+    integer, parameter :: n = 12         !Pontos que serão interpolados
+    integer, parameter :: ni = 3         !Para os arcos
+    integer, parameter :: nn = 61        !Para o gráfico
     real x0, xn, passo, passo2
     real, allocatable :: x(:), y(:), xp(:), yp(:)
     integer i,j, aux, aux2
