@@ -4,7 +4,7 @@
 
 ! Programa Principal
 
-program lagrange
+program lagrange      !O comando PROGRAM é usado para identificar o programa principal. 
     implicit none     ! faz com que todas as variáveis do programa tenham que ter o seu tipo obrigatoriamente pré- definidas. 
 
     !INTERFACE PARA FUNÇÕES E SUBROTINAS
